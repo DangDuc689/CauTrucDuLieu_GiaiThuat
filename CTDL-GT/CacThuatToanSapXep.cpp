@@ -34,28 +34,24 @@ void SelectionSort(int a[], int n){ // chọn trực tiếp ( tìm x(max,min) kh
     }
 }
 
-void BubbleSort(int a[], int n) { // nổi bọt ( chậm )
-    for (int i = 0; i < n - 1; i++) {
-        for (int j = 0; j < n - i - 1; j++) {
-            if (a[j] > a[j + 1]){
-                swap(a[j], a[j+1]);
-            }
-        }
-    }
-}
+void BubbleSort(int a[], int n) { // nổi bọt (chậm) 
+    for (int i = 0; i < n; i++) 
+        for (int j = n-1; j >= i; j--)  
+            if (a[j] < a[j-1])  
+                swap(a[j], a[j-1]); 
+} 
 
 // Hàm Quick Sort với tham số left và right
 void QuickSort(int a[], int left, int right) {
-    int i, j, pivot;
 
-    // Chọn pivot là phần tử giữa mảng
-    pivot = a[(left + right) / 2];
-    i = left;
-    j = right;
+    // Chọn x là phần tử giữa mảng
+    int x = a[(left + right) / 2];
+    int i = left;
+    int j = right;
 
     do {
-        while (a[i] < pivot) i++;
-        while (a[j] > pivot) j--;
+        while (a[i] < x) i++;
+        while (a[j] > x) j--;
         if (i <= j) {
             swap(a[i], a[j]);
             i++;
