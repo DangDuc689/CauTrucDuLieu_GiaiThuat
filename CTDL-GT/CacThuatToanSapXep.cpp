@@ -36,7 +36,7 @@ void SelectionSort(int a[], int n){ // chọn trực tiếp ( tìm x(max,min) kh
 
 void BubbleSort(int a[], int n) { // nổi bọt (chậm) 
     for (int i = 0; i < n; i++) 
-        for (int j = n-1; j >= i; j--)  
+        for (int j = n-1; j > i; j--)  
             if (a[j] < a[j-1])  
                 swap(a[j], a[j-1]); 
 } 

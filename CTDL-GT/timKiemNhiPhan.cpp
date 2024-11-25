@@ -20,7 +20,7 @@ int BinarySearch(int a[], int n, int x){
 
         if (a[mid] == x) 
             return mid;
-        else if (a[mid] > x) // điều kiện có thể thay đổi tùy theo [ Mảng ] GIẢM DẦN hay TĂNG DẦN
+        else if (a[mid] > x) //điều kiện theo [ Mảng ] GIẢM DẦN (a[mid] < x) hay TĂNG DẦN (a[mid] > x)
             right = mid - 1;
         else
             left = mid + 1;
