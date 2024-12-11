@@ -3,7 +3,7 @@
 
 typedef struct node
 {
-    int key;
+    int data ;
     struct node *pNext;
 } NODE;
 
@@ -28,7 +28,7 @@ NODE* CreateNode(int x)
         printf("Khong cap phat duoc.");
         exit(0);
     }
-    p->key = x;
+    p->data  = x;
     p->pNext = NULL;
     return p;
 }
@@ -74,11 +74,12 @@ void InputList(LIST &l)
 }
 
 void OutputList(LIST l)
-{
+{                           // i < n
     for (NODE* i = l.pHead; i != NULL; i = i->pNext)
-        printf("%d->", i->key);
+        printf("%d->", i->data );
 }
 
+/*
 int TimViTriMin(int a[], int n)
 {
     int vtmin = 0;
@@ -87,12 +88,13 @@ int TimViTriMin(int a[], int n)
             vtmin = i;
     return vtmin;
 }
+*/
 
 NODE* TimNodeMin(LIST l)
 {
     NODE* nodemin = l.pHead;
     for (NODE* i = l.pHead->pNext; i != NULL; i = i->pNext)
-        if (nodemin->key > i->key)
+        if (nodemin->data > i->data )
             nodemin = i;
     return nodemin;
 }
@@ -101,14 +103,14 @@ int TongDS(LIST l)
 {
     int S = 0;
     for (NODE* i = l.pHead; i != NULL; i = i->pNext)
-        S += i->key;
+        S += i->data ;
     return S;
 }
 
 NODE* TimNodeGiaTriChan(LIST l)
 {
-    for(NODE* i=l.pHead; i!=NULL; i=i->pNext)
-        if(i->key%2==0)
+    for(NODE* i = l.pHead; i != NULL; i = i->pNext)
+        if(i->data % 2 == 0)
             return i;
     return NULL;
 }
@@ -117,11 +119,11 @@ void InterchangeSort(LIST &l)
 {
     for(NODE *i=l.pHead; i!=l.pTail; i=i->pNext)
         for(NODE* j=i->pNext; j!=NULL; j=j->pNext)
-            if(i->key > j->key)
+            if(i->data  > j->data )
             {
-                int t = i->key;
-                i->key = j->key;
-                j->key = t;
+                int t = i->data ;
+                i->data  = j->data ;
+                j->data  = t;
             }
 }
 
@@ -133,10 +135,10 @@ int main()
     printf("\nDSLK don sau khi nhap:\n");
     OutputList(l);
     /*NODE* i = TimNodeMin(L);
-    printf("\nGia tri node min = %d", i->key);
+    printf("\nGia tri node min = %d", i->data );
     i=TimNodeGiaTriChan(L);
     if(i==NULL) printf("\nDS khong co chan.");
-    else printf("\nNode co gia tri chan: %d", i->key);*/
+    else printf("\nNode co gia tri chan: %d", i->data );*/
     InterchangeSort(l);
     printf("\nSap xep InterchangeSort: \n");
     OutputList(l);
