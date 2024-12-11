@@ -26,9 +26,9 @@ void InsertionSort(int a[], int n){
 }
 
 
-                x=7                   
-        2   4   7   6   10
-            j   i          
+                        x=6                   
+        2   4   6   7   10
+                    j   i          
 // -1   0   1   2   3   4     (thu tu)
 
 void BubbleSort(int a[], int n){
@@ -42,9 +42,9 @@ void BubbleSort(int a[], int n){
 }
       
 
-        0   3   7   5   9  
-                i       j
-                    j-1
+        0   3   5   7   9  
+            i       j
+                j-1
     //  0   1   2   3   4
 
 
@@ -60,9 +60,9 @@ void SelectionSort(int a[], int n){
 }
 
 
-        2   3   8   9   4
-                i   j                    
-                x           
+        2   4   5   7   8
+                    i   j                            
+                    x                   
     //  0   1   2   3   4
 
 

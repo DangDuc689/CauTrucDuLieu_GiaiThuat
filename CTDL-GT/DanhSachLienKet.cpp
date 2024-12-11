@@ -25,10 +25,12 @@ void Init(List &l){
 
 Node* CreateNote(int x){
     Node *p = (Node*) malloc(sizeof(Node));
+    /* 
     if (p == NULL){
         printf ("Khong cap phat duoc");
-        exit(0);
-    }
+        exit(0);  
+    } 
+    */
     p->Key = x;
     p->pNext = NULL;
     return p;
