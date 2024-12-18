@@ -17,6 +17,7 @@ void Init(LIST &l)
 {
     l.pHead = NULL;
     l.pTail = NULL;
+    // l.pHead = l.pTail = NULL;
 }
 
 NODE* CreateNode(int x)
@@ -33,29 +34,25 @@ NODE* CreateNode(int x)
     return p;
 }
 
-void InsertHead(LIST &l, NODE* p)
-{
-    if (l.pHead == NULL)
-    {
+void InsertHead(LIST &l, NODE* p) // chèn đầu (đảo ngược)
+{                                 // input:  1 2 3               
+    if (l.pHead == NULL)          // output: 3 2 1
         l.pHead = l.pTail = p;
-    }
     else
     {
-        p->pNext = l.pHead;
-        l.pHead = p;
+        p->pNext = l.pHead; // giá trị tiếp theo sẽ bằng nút đầu
+        l.pHead = p;        // cập nhật lại nút đầu (đồng thời gán nút đầu bằng p) 
     }
 }
 
-void InsertTail(LIST &l, NODE* p)
-{
-    if (l.pHead == NULL)
-    {
+void InsertTail(LIST &l, NODE* p) // chèn đuôi
+{                                 // input:  1 2 3
+    if (l.pHead == NULL)          // output: 1 2 3
         l.pHead = l.pTail = p;
-    }
     else
     {
-        l.pTail->pNext = p;
-        l.pTail = p;
+        l.pTail->pNext = p; // gán giá trị p vào nút tiếp theo của nút đuôi
+        l.pTail = p;        // cập nhật lại nút đuôi 
     }
 }
 
@@ -74,7 +71,7 @@ void InputList(LIST &l)
 }
 
 void OutputList(LIST l)
-{                           // i < n
+{                          // i < n
     for (NODE* i = l.pHead; i != NULL; i = i->pNext)
         printf("%d->", i->data );
 }
