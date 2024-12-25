@@ -55,7 +55,7 @@ void SelectionSort(int a[], int n){
             if (a[j] < a[x])
                 x = j;
         }
-        swap(a[x], x[i]);
+        swap(a[x], a[i]);
     }
 }
 
@@ -67,7 +67,7 @@ void SelectionSort(int a[], int n){
 
 
 void QuickSort(int a[], int left, int right){
-    int x = a[(left + right) / 2]
+    int x = a[(left + right) / 2];
     int i = left;
     int j = right;
 
@@ -137,7 +137,7 @@ void BubbleSort(int a[], int n){
 }
 
 void SelectionSort(int a[], int n){
-    for (int i = 0; i < n-1; i++){
+    for (int i = 0; i < n-1; i++){  
         int x = i;
         for (int j = i+1; j < n; j++){
             if (a[j] < a[x])
