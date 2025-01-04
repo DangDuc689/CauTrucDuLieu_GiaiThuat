@@ -31,8 +31,10 @@ Node* CreateNote(int x){
         exit(0);  
     } 
     */
-    p->Key = x;
-    p->pNext = NULL;
+    if (p != NULL){
+        p->Key = x;
+        p->pNext = NULL;
+    }
     return p;
 }
 
